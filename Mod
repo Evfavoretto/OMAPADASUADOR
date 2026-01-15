@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>O Mapa da Sua Dor — Quiz emocional</title>
+  <meta name="description" content="Descubra a raiz emocional do cansaço que você sente e o primeiro passo para se libertar dele. Um espelho emocional com 5 perguntas e resultado imediato." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="O Mapa da Sua Dor — Quiz emocional" />
+  <meta property="og:description" content="Descubra a raiz emocional do cansaço que você sente e o primeiro passo para se libertar dele." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=O+Mapa+da+Sua+Dor" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="O Mapa da Sua Dor — Quiz emocional" />
+  <meta name="twitter:description" content="Descubra a raiz emocional do cansaço que você sente e o primeiro passo para se libertar dele." />
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=O+Mapa+da+Sua+Dor" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0B1220;
+      --card:#0F1A2E;
+      --muted:#AAB4C5;
+      --text:#EAF0FF;
+      --line:rgba(255,255,255,.10);
+      --brand:#C9376E;
+      --brand2:#4DA6FF;
+      --soft1:rgba(201,55,110,.16);
+      --soft2:rgba(77,166,255,.16);
+      --ok:#10B981;
+      --warn:#F59E0B;
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 900px at 15% 10%, rgba(201,55,110,.22), transparent 60%),
+              radial-gradient(1000px 800px at 85% 20%, rgba(77,166,255,.22), transparent 55%),
+              var(--bg);
+              color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1050px;margin:0 auto;padding:0 18px}
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      background:rgba(11,18,32,.75);backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 0}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:linear-gradient(90deg, rgba(201,55,110,.18), rgba(77,166,255,.18));
+      border:1px solid var(--line);
+      padding:8px 12px;border-radius:999px;
+      font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    }
+    .nav-cta{display:flex;gap:10px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:14px;font-weight:900;border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      transition: transform .06s ease, filter .18s ease, background .18s ease;
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+      cursor:pointer;
+    }
+    .btn:hover{filter:brightness(1.08)}
+    .btn:active{transform:translateY(1px)}
+    .btn:focus{outline:3px solid rgba(77,166,255,.35);outline-offset:2px}
+    .btn.primary{
+      border:none;
+      background:linear-gradient(90deg, var(--brand), var(--brand2));
+    }
+    .btn.ghost{
+      background:transparent;border:1px solid rgba(77,166,255,.45)
+    }
+    .hero{padding:34px 0 18px}
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:26px 18px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute;inset:-2px;
+      background:radial-gradient(800px 240px at 20% 0%, rgba(201,55,110,.35), transparent 60%),
+                 radial-gradient(700px 260px at 90% 10%, rgba(77,166,255,.30), transparent 60%);
+      opacity:.45; pointer-events:none;
+    }
+    .hero-grid{display:grid;gap:18px;align-items:center;position:relative}
+    @media(min-width:900px){ .hero-grid{grid-template-columns: 1.35fr .65fr;} }
+    h1{
+      font-size:clamp(30px,4.4vw,52px);
+      line-height:1.05;margin:0;
+      letter-spacing:-.03em;
+    }
+    .sub{
+      margin:12px 0 0;color:var(--muted);font-size:clamp(15px,2.2vw,18px);line-height:1.6;
+      max-width:70ch;
+    }
+    .highlight{
+      display:inline-block;
+      background:linear-gradient(90deg, rgba(201,55,110,.22), rgba(77,166,255,.22));
+      border:1px solid var(--line);
+      padding:8px 12px;border-radius:14px;
+      font-weight:800;
+    }
+    .side-card{
+      background:rgba(15,26,46,.60);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+    .side-title{font-weight:900;margin:0 0 6px}
+    .side-text{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+    section{padding:18px 0}
+    .card{
+      background:rgba(15,26,46,.66);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.22);
+    }
+    .section-title{
+      font-size:clamp(18px,2.5vw,24px);
+      margin:0 0 12px;
+      letter-spacing:-.02em;
+      font-weight:900;
+    }
+    .leadline{
+      margin:0;color:var(--muted);line-height:1.7;font-size:15px;
+    }
+    .notice{
+      display:flex;gap:12px;align-items:flex-start;
+      padding:14px;border-radius:16px;
+      background:linear-gradient(90deg, var(--soft1), var(--soft2));
+      border:1px solid var(--line);
+    }
+    .notice .icon{font-size:20px;line-height:1.1;margin-top:1px}
+    .notice strong{color:var(--text)}
+    .quiz{
+      display:grid;gap:14px;
+    }
+    .q{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    .q-head{
+      padding:14px 14px 10px;
+      display:flex;justify-content:space-between;gap:10px;align-items:flex-start;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .q-title{margin:0;font-weight:900;font-size:15px}
+    .q-chip{
+      flex:0 0 auto;
+      font-size:12px;font-weight:900;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+    }
+    .options{padding:10px 10px 14px;display:grid;gap:10px}
+    .opt{
+      display:flex;gap:10px;align-items:flex-start;
+      padding:10px 10px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      cursor:pointer;
+      transition: background .18s ease, border-color .18s ease, transform .06s ease;
+    }
+    .opt:hover{background:rgba(255,255,255,.05)}
+    .opt:active{transform:translateY(1px)}
+    .opt input{margin-top:3px}
+    .opt b{display:inline-block;min-width:20px}
+    .opt span{color:var(--muted);line-height:1.5}
+    .actions{
+      display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+      margin-top:14px;
+    }
+    .progress{
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Resultado */
+    #result{display:none}
+    .result-box{
+      border-radius:18px;
+      border:1px solid var(--line);
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+    }
+    .result-top{
+      padding:14px 16px;
+      background:linear-gradient(90deg, rgba(201,55,110,.22), rgba(77,166,255,.22));
+      border-bottom:1px solid var(--line);
+    }
+    .result-top small{color:var(--muted);font-weight:700}
+    .result-top h3{margin:6px 0 0;font-size:20px;font-weight:900}
+    .result-body{padding:16px}
+    .result-body p{margin:0;color:var(--muted);line-height:1.7}
+    .first-step{
+      margin-top:12px;
+      padding:12px 12px;border-radius:14px;
+      background:rgba(16,185,129,.12);
+      border:1px solid rgba(16,185,129,.30);
+      color:#DFF7EE;
+      font-weight:800;
+    }
+
+    /* CTA final */
+    .cta-block{
+      display:grid;gap:12px;
+      padding:18px;border-radius:18px;
+      background:linear-gradient(90deg, rgba(77,166,255,.18), rgba(201,55,110,.18));
+      border:1px solid var(--line);
+      align-items:center;
+    }
+    @media(min-width:860px){ .cta-block{grid-template-columns: 1.2fr .8fr;} }
+    .cta-block h2{margin:0;font-size:22px;font-weight:900}
+    .cta-block p{margin:8px 0 0;color:var(--muted);line-height:1.7}
+    footer{
+      padding:24px 0 40px;border-top:1px solid var(--line);
+      color:var(--muted);font-size:13px;
+    }
+
+    /* Whats flutuante */
+    .whats-float{
+      position:fixed; right:18px; bottom:18px; z-index:2000;
+      width:62px; height:62px; border-radius:50%;
+      background:#25D366; box-shadow:0 18px 36px rgba(0,0,0,.35);
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(255,255,255,.25);
+    }
+    .whats-float svg{width:30px;height:30px;fill:#fff}
+    .sr-only{
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;
+    }
+    .tiny{font-size:12px;color:var(--muted);line-height:1.6}
+  </style>
+</head>
+
+<body>
+  <!-- Topo -->
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="badge">O MAPA DA SUA DOR</div>
+      <div class="nav-cta">
+        <a class="btn ghost" href="#quiz">Fazer o quiz</a>
+        <a class="btn primary" href="#cta">Sessão no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div>
+            <h1>Descubra a raiz emocional do cansaço que você sente<br><span class="highlight">e o primeiro passo para se libertar dele</span></h1>
+            <p class="sub">
+              <strong>Este não é um teste comum.</strong><br>
+              É um espelho emocional para revelar onde você está se perdendo de si.
+            </p>
+
+            <div class="actions" style="margin-top:16px">
+              <a class="btn primary" href="#quiz">Começar agora</a>
+              <a class="btn" href="#resultado">Ver como funciona</a>
+              <div class="progress" aria-live="polite"><span id="answeredCount">0</span>/5 respondidas</div>
+            </div>
+            <p class="tiny" style="margin:12px 0 0">
+              *Responda com calma. O resultado aparece ao final e você pode reiniciar quando quiser.
+            </p>
+          </div>
+
+          <aside class="side-card" aria-label="Instrução rápida">
+            <p class="side-title">🧭 Instrução (topo da página)</p>
+            <p class="side-text">
+              Leia cada pergunta com calma.<br>
+              Marque a alternativa que mais se repete na sua vida <strong>hoje</strong>, não a que você gostaria que fosse verdade.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- INSTRUÇÃO DETALHADA -->
+  <section id="resultado">
+    <div class="wrap">
+      <div class="card">
+        <h2 class="section-title">🧭 Instrução</h2>
+        <div class="notice">
+          <div class="icon">🧭</div>
+          <div>
+            <p class="leadline">
+              Leia cada pergunta com calma.<br>
+              Marque a alternativa que mais se repete na sua vida hoje, <strong>não</strong> a que você gostaria que fosse verdade.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <main id="quiz">
+    <section>
+      <div class="wrap">
+        <div class="card">
+          <h2 class="section-title">🧩 Quiz — 5 perguntas de diagnóstico</h2>
+          <p class="leadline">Escolha <strong>uma</strong> alternativa (A–E) em cada pergunta.</p>
+
+          <form id="quizForm" class="quiz" autocomplete="off">
+            <!-- Q1 -->
+            <div class="q">
+              <div class="q-head">
+                <p class="q-title">1️⃣ Quando você pensa na sua rotina, o que mais aparece?</p>
+                <span class="q-chip">Pergunta 1/5</span>
+              </div>
+              <div class="options" role="radiogroup" aria-label="Pergunta 1">
+                <label class="opt"><input type="radio" name="q1" value="A"><div><b>A)</b> <span>Sensação de estar sempre “devendo algo”</span></div></label>
+                <label class="opt"><input type="radio" name="q1" value="B"><div><b>B)</b> <span>Cansaço mesmo quando descanso</span></div></label>
+                <label class="opt"><input type="radio" name="q1" value="C"><div><b>C)</b> <span>Irritação por fazer mais do que os outros</span></div></label>
+                <label class="opt"><input type="radio" name="q1" value="D"><div><b>D)</b> <span>Vazio, mesmo tendo conquistas</span></div></label>
+                <label class="opt"><input type="radio" name="q1" value="E"><div><b>E)</b> <span>Medo constante de errar ou decepcionar</span></div></label>
+              </div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="q">
+              <div class="q-head">
+                <p class="q-title">2️⃣ Em momentos de conflito, você costuma:</p>
+                <span class="q-chip">Pergunta 2/5</span>
+              </div>
+              <div class="options" role="radiogroup" aria-label="Pergunta 2">
+                <label class="opt"><input type="radio" name="q2" value="A"><div><b>A)</b> <span>Engolir o que sente para evitar problemas</span></div></label>
+                <label class="opt"><input type="radio" name="q2" value="B"><div><b>B)</b> <span>Assumir tudo e resolver sozinho(a)</span></div></label>
+                <label class="opt"><input type="radio" name="q2" value="C"><div><b>C)</b> <span>Explodir depois de acumular demais</span></div></label>
+                <label class="opt"><input type="radio" name="q2" value="D"><div><b>D)</b> <span>Se afastar emocionalmente</span></div></label>
+                <label class="opt"><input type="radio" name="q2" value="E"><div><b>E)</b> <span>Travar, não sabendo o que decidir</span></div></label>
+              </div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="q">
+              <div class="q-head">
+                <p class="q-title">3️⃣ Qual frase mais combina com você hoje?</p>
+                <span class="q-chip">Pergunta 3/5</span>
+              </div>
+              <div class="options" role="radiogroup" aria-label="Pergunta 3">
+                <label class="opt"><input type="radio" name="q3" value="A"><div><b>A)</b> <span>“Se eu não fizer, ninguém faz”</span></div></label>
+                <label class="opt"><input type="radio" name="q3" value="B"><div><b>B)</b> <span>“Estou cansado(a), mas não posso parar”</span></div></label>
+                <label class="opt"><input type="radio" name="q3" value="C"><div><b>C)</b> <span>“Eu me cobro muito”</span></div></label>
+                <label class="opt"><input type="radio" name="q3" value="D"><div><b>D)</b> <span>“Parece que falta algo, mas não sei o quê”</span></div></label>
+                <label class="opt"><input type="radio" name="q3" value="E"><div><b>E)</b> <span>“Tenho medo de perder o controle”</span></div></label>
+              </div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="q">
+              <div class="q-head">
+                <p class="q-title">4️⃣ Quando pensa em cuidar de você, o que surge?</p>
+                <span class="q-chip">Pergunta 4/5</span>
+              </div>
+              <div class="options" role="radiogroup" aria-label="Pergunta 4">
+                <label class="opt"><input type="radio" name="q4" value="A"><div><b>A)</b> <span>Culpa</span></div></label>
+                <label class="opt"><input type="radio" name="q4" value="B"><div><b>B)</b> <span>Falta de tempo</span></div></label>
+                <label class="opt"><input type="radio" name="q4" value="C"><div><b>C)</b> <span>Sensação de egoísmo</span></div></label>
+                <label class="opt"><input type="radio" name="q4" value="D"><div><b>D)</b> <span>Confusão sobre o que quer</span></div></label>
+                <label class="opt"><input type="radio" name="q4" value="E"><div><b>E)</b> <span>Medo de mexer em coisas antigas</span></div></label>
+              </div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="q">
+              <div class="q-head">
+                <p class="q-title">5️⃣ O que mais drena sua energia hoje?</p>
+                <span class="q-chip">Pergunta 5/5</span>
+              </div>
+              <div class="options" role="radiogroup" aria-label="Pergunta 5">
+                <label class="opt"><input type="radio" name="q5" value="A"><div><b>A)</b> <span>Relações</span></div></label>
+                <label class="opt"><input type="radio" name="q5" value="B"><div><b>B)</b> <span>Trabalho / dinheiro</span></div></label>
+                <label class="opt"><input type="radio" name="q5" value="C"><div><b>C)</b> <span>Família</span></div></label>
+                <label class="opt"><input type="radio" name="q5" value="D"><div><b>D)</b> <span>Expectativas dos outros</span></div></label>
+                <label class="opt"><input type="radio" name="q5" value="E"><div><b>E)</b> <span>Pensamentos repetitivos</span></div></label>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button type="button" class="btn primary" id="btnResult">Ver meu resultado</button>
+              <button type="button" class="btn" id="btnReset">Reiniciar</button>
+              <div class="progress" id="helperText">Responda as 5 perguntas para ver o resultado.</div>
+            </div>
+          </form>
+
+          <!-- RESULTADO -->
+          <div id="result" style="margin-top:16px" aria-live="polite">
+            <div class="result-box">
+              <div class="result-top">
+                <small>🔍 Resultado — identifique sua dor dominante</small>
+                <h3 id="resultTitle">Sua dor dominante</h3>
+              </div>
+              <div class="result-body">
+                <p id="resultText"></p>
+                <div class="first-step" id="resultStep"></div>
+
+                <div class="actions" style="margin-top:14px">
+                  <a class="btn primary" id="whatsBtn" href="#cta">✨ Quero ir mais fundo no WhatsApp</a>
+                  <a class="btn ghost" href="#quiz">Refazer o quiz</a>
+                </div>
+                <p class="tiny" style="margin:12px 0 0">
+                  *Este quiz é um instrumento de reflexão e autoconsciência. Se você estiver em sofrimento intenso, busque apoio profissional.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FECHAMENTO TERAPÊUTICO -->
+    <section>
+      <div class="wrap">
+        <div class="card">
+          <h2 class="section-title">🌱 Fechamento terapêutico</h2>
+          <p class="leadline">
+            <strong>O cansaço não é fraqueza.</strong><br>
+            Ele é um pedido de reorganização interna.
+          </p>
+          <p class="leadline" style="margin-top:10px">
+            Quando a raiz é vista, o corpo para de gritar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="cta" style="padding-bottom:10px">
+      <div class="wrap">
+        <div class="cta-block">
+          <div>
+            <h2>📲 Quer ir mais fundo e entender a origem real dessa dor na sua história?</h2>
+            <p>Me chama no WhatsApp para uma <strong>Sessão Diagnóstico Gratuita</strong>.<br>
+              Vamos olhar isso com clareza, respeito e profundidade.</p>
+          </div>
+          <div style="display:grid;gap:10px;justify-items:stretch">
+            <!-- TROQUE O LINK DO WHATSAPP AQUI -->
+            <a class="btn primary" id="ctaWhats"
+               href="https://wa.me/55SEUNUMEROAQUI?text=Oi!%20Fiz%20o%20quiz%20O%20Mapa%20da%20Minha%20Dor%20e%20quero%20uma%20Sess%C3%A3o%20Diagn%C3%B3stico%20Gratuita."
+               target="_blank" rel="noopener">
+              Chamar no WhatsApp
+            </a>
+            <a class="btn" href="#quiz">Voltar ao quiz</a>
+            <p class="tiny" style="margin:0">Dica: personalize a mensagem do WhatsApp com o resultado do quiz.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+        <div>© <span id="year"></span> • O Mapa da Sua Dor</div>
+        <div class="tiny">Página estática • SEO básico • Acessível • Responsiva</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a class="whats-float"
+     href="https://wa.me/55SEUNUMEROAQUI?text=Oi!%20Quero%20uma%20Sess%C3%A3o%20Diagn%C3%B3stico%20Gratuita%20sobre%20a%20dor%20que%20descobri%20no%20quiz."
+     target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <span class="sr-only">Falar no WhatsApp</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.5 3.5A10 10 0 0 0 3.2 17.7L2 22l4.4-1.2A10 10 0 1 0 20.5 3.5Zm-8.4 2.2c4.1 0 7.4 3.3 7.4 7.4a7.4 7.4 0 0 1-10.1 6.8l-.3-.1-2.6.7.7-2.5-.1-.3a7.4 7.4 0 0 1 5-11.9Zm4.2 9.8c-.2.6-1.1 1-1.5 1.1-.4.1-.9.1-1.5 0s-1.5-.5-2.6-1.1c-1-.6-1.8-1.6-2.1-2.1-.3-.5-.5-1.3-.1-1.9.2-.3.5-.8.8-.8h.6c.1 0 .4-.1.6.5.2.6.8 2 .9 2.2.1.2.1.4 0 .6s-.2.4-.4.6c-.2.2-.4.4-.2.7.2.3.9 1.4 2.1 2 .9.5 1.6.6 1.9.4.3-.2.4-.5.6-.8.2-.3.5-.4.8-.3l1.9.9c.3.1.5.3.6.5Z"/>
+    </svg>
+  </a>
+
+  <script>
+    // ====== CONFIG ======
+    // Troque pelo seu número no formato internacional (Brasil: 55 + DDD + número)
+    // Ex: 5541999999999
+    const WHATS_NUMBER = "55SEUNUMEROAQUI";
+
+    const RESULTS = {
+      A: {
+        title: "🔹 MAIORIA A — DOR DA CULPA",
+        text: "Você aprendeu a carregar pesos que não são seus. Seu cansaço vem de assumir responsabilidades emocionais demais.",
+        step: "👉 Primeiro passo: devolver o que não te pertence."
+      },
+      B: {
+        title: "🔹 MAIORIA B — DOR DA SOBRECARGA",
+        text: "Você vive no modo sobrevivência. Não falta força — falta sustentação emocional.",
+        step: "👉 Primeiro passo: sair do papel de quem sustenta tudo sozinho(a)."
+      },
+      C: {
+        title: "🔹 MAIORIA C — DOR DA RAIVA CONTIDA",
+        text: "Você faz mais do que pode e menos do que merece. A raiva não expressa vira exaustão.",
+        step: "👉 Primeiro passo: reconhecer seus limites sem se culpar."
+      },
+      D: {
+        title: "🔹 MAIORIA D — DOR DO VAZIO",
+        text: "Você conquistou coisas, mas se desconectou de si. O cansaço aqui é existencial, não físico.",
+        step: "👉 Primeiro passo: resgatar sentido e pertencimento."
+      },
+      E: {
+        title: "🔹 MAIORIA E — DOR DO CONTROLE E DO MEDO",
+        text: "Você tenta prever tudo para não sofrer. Isso consome energia vital.",
+        step: "👉 Primeiro passo: aprender a confiar e soltar o excesso de controle."
+      }
+    };
+
+    // ====== HELPERS ======
+    const $ = (s, el=document) => el.querySelector(s);
+    const $$ = (s, el=document) => Array.from(el.querySelectorAll(s));
+
+    const form = $("#quizForm");
+    const answeredCountEl = $("#answeredCount");
+    const helperText = $("#helperText");
+    const resultWrap = $("#result");
+    const resultTitle = $("#resultTitle");
+    const resultText = $("#resultText");
+    const resultStep = $("#resultStep");
+    const btnResult = $("#btnResult");
+    const btnReset = $("#btnReset");
+    const ctaWhats = $("#ctaWhats");
+    const whatsFloat = $(".whats-float");
+    const whatsBtn = $("#whatsBtn");
+
+    // set year
+    $("#year").textContent = new Date().getFullYear();
+
+    // update whatsapp links with number
+    function setWhatsLinks(extraText=""){
+      const base = `https://wa.me/${WHATS_NUMBER}`;
+      const msgDefault = "Oi! Fiz o quiz O Mapa da Sua Dor e quero uma Sessão Diagnóstico Gratuita.";
+      const msg = encodeURIComponent(extraText ? `${msgDefault}\n\nMeu resultado: ${extraText}` : msgDefault);
+
+      ctaWhats.href = `${base}?text=${msg}`;
+      whatsFloat.href = `${base}?text=${msg}`;
+      whatsBtn.href = `${base}?text=${msg}`;
+    }
+    setWhatsLinks("");
+
+    function countAnswered(){
+      let count = 0;
+      for(let i=1;i<=5;i++){
+        if(form.querySelector(`input[name="q${i}"]:checked`)) count++;
+      }
+      answeredCountEl.textContent = String(count);
+      helperText.textContent = (count === 5)
+        ? "Tudo pronto! Clique em “Ver meu resultado”."
+        : `Faltam ${5-count} pergunta(s) para completar.`;
+      return count;
+    }
+
+    form.addEventListener("change", () => {
+      countAnswered();
+      // visual feedback: highlight selected option
+      $$(".options").forEach(group => {
+        $$(".opt", group).forEach(opt => opt.style.borderColor = "rgba(255,255,255,.08)");
+        const checked = group.querySelector("input:checked");
+        if(checked){
+          const label = checked.closest(".opt");
+          label.style.borderColor = "rgba(77,166,255,.55)";
+        }
+      });
+    });
+
+    function getWinnerLetter(answers){
+      const counts = {A:0,B:0,C:0,D:0,E:0};
+      answers.forEach(l => counts[l]++);
+      // winner by highest count; in tie, pick the earliest answered
+      const max = Math.max(...Object.values(counts));
+      const tied = Object.keys(counts).filter(k => counts[k] === max);
+      if(tied.length === 1) return tied[0];
+      // tie-break: first letter that appears in answers order
+      for(const l of answers){
+        if(tied.includes(l)) return l;
+      }
+      return tied[0];
+    }
+
+    function getAnswers(){
+      const answers = [];
+      for(let i=1;i<=5;i++){
+        const sel = form.querySelector(`input[name="q${i}"]:checked`);
+        if(!sel) return null;
+        answers.push(sel.value);
+      }
+      return answers;
+    }
+
+    function showResult(){
+      const answered = countAnswered();
+      if(answered < 5){
+        resultWrap.style.display = "none";
+        helperText.textContent = "Responda as 5 perguntas para ver o resultado.";
+        helperText.style.color = "var(--warn)";
+        setTimeout(()=> helperText.style.color = "var(--muted)", 1200);
+        // foco na primeira pergunta não respondida
+        for(let i=1;i<=5;i++){
+          if(!form.querySelector(`input[name="q${i}"]:checked`)){
+            const firstOpt = form.querySelector(`input[name="q${i}"]`);
+            firstOpt && firstOpt.focus();
+            break;
+          }
+        }
+        return;
+      }
+      const answers = getAnswers();
+      const winner = getWinnerLetter(answers);
+      const res = RESULTS[winner];
+
+      resultTitle.textContent = res.title;
+      resultText.textContent = res.text;
+      resultStep.textContent = res.step;
+
+      // personalize mensagem do WhatsApp com o resultado
+      setWhatsLinks(res.title);
+
+      resultWrap.style.display = "block";
+      resultWrap.scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    function resetAll(){
+      form.reset();
+      resultWrap.style.display = "none";
+      helperText.textContent = "Responda as 5 perguntas para ver o resultado.";
+      helperText.style.color = "var(--muted)";
+      answeredCountEl.textContent = "0";
+      setWhatsLinks("");
+      // remove highlights
+      $$(".opt").forEach(opt => opt.style.borderColor = "rgba(255,255,255,.08)");
+      // foco no topo do quiz
+      $("#quiz").scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    btnResult.addEventListener("click", showResult);
+    btnReset.addEventListener("click", resetAll);
+
+    // Keyboard accessibility: Enter on focused button works naturally; labels already clickable
+    countAnswered();
+  </script>
+</body>
+</html>
