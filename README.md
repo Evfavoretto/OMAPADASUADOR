@@ -489,7 +489,7 @@
     </section>
 
     <footer>
-      © O Mapa da Sua Dor. Todos os direitos reservados.
+      © Todos os direitos reservados. EA Favoretto LTDA.
     </footer>
 
   </div>
