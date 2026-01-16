@@ -259,7 +259,7 @@
       font-weight:900;
     }
 
-    /*  */
+    /* CTA FINAL */
     .footer-cta{
       background:var(--blue-2);
       border:1px solid #dbeafe;
@@ -467,13 +467,13 @@
       </div>
     </section>
 
-    <!-- CTA FINAL -->
+    
     <section id="cta" style="padding:32px 20px;border-bottom:0">
       <div class="wrap">
         <div class="footer-cta">
           <div>
             <div style="font-weight:900;color:var(--rose);letter-spacing:.06em;text-transform:uppercase;font-size:12px">
-              CTA FINAL
+             
             </div>
             <h3 style="margin:6px 0 0;font-size:22px;color:var(--ink)">
               Quer ir mais fundo e entender a origem real dessa dor na sua história?
@@ -489,7 +489,7 @@
     </section>
 
     <footer>
-      © Todos os direitos reservados. EA Favoretto LTDA.
+      © O Mapa da Sua Dor. Todos os direitos reservados.
     </footer>
 
   </div>
