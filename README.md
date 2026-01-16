@@ -259,7 +259,7 @@
       font-weight:900;
     }
 
-    /* CTA FINAL */
+    /*  */
     .footer-cta{
       background:var(--blue-2);
       border:1px solid #dbeafe;
