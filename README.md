@@ -288,7 +288,7 @@
 
           <p class="lead" style="max-width:900px">
             <strong>Este não é um teste comum.</strong><br>
-            É um espelho emocional para revelar onde você está se perdendo de si.
+            É um diagnóstico objetivo da sua dor.
           </p>
 
           <div class="divider"></div>
